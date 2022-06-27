@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Fragment.StatusFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sp_45"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginRight="@dimen/margin_20"
+            android:background="@drawable/back_tabs"
+            android:padding="@dimen/sp_5"
+            android:textSize="@dimen/text_12"
+            app:defaultQueryHint="@string/search"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null"
+            app:queryHint="@string/search" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lin_my_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/image_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/cir_status"
+                            android:layout_width="@dimen/sp_50"
+                            android:layout_height="@dimen/sp_50"
+                            android:padding="@dimen/sp_3"
+                            android:src="@drawable/ic_my_status" />
+
+                        <com.devlomi.circularstatusview.CircularStatusView
+                            android:id="@+id/circular_status_view"
+                            android:layout_width="@dimen/sp_50"
+                            android:layout_height="@dimen/sp_50"
+                            android:layout_centerInParent="true"
+                            app:portion_color="@color/colorAccent"
+                            app:portion_spacing="@dimen/sp_4"
+                            app:portion_width="1.5dp"
+                            app:portions_count="2" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_15"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_my_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/sp_19"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="top"
+                            android:text="@string/my_status"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_16" />
+
+                        <TextView
+                            android:id="@+id/txt_tap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/sp_14"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/tap_to_add"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_12" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/resent_upda"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recent_status_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_recent_status" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_20"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/viewed_stat"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/viewed_status_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/user_chat_list" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/sp_20"
+        app:maxImageSize="28dp"
+        android:src="@drawable/ic_camera_vector"
+        android:tint="@color/white" />
+</RelativeLayout>

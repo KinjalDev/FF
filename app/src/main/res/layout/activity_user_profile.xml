@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.UserProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkturquoise">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="@dimen/sp_35"
+            android:layout_height="@dimen/sp_35"
+            android:padding="@dimen/margin_6"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:src="@drawable/backarrow"
+            android:tint="@color/white" />
+
+        <RelativeLayout
+            android:id="@+id/u_image"
+            android:layout_width="@dimen/sp_121"
+            android:layout_height="@dimen/sp_121"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_16"
+            android:background="@drawable/ellipse_bodar">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_profile_image"
+                android:layout_width="@dimen/sp_121"
+                android:layout_height="@dimen/sp_121"
+                android:src="@drawable/ic_user_img"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/sp_3"
+                app:civ_circle_background_color="@color/bg_grey" />
+
+            <RelativeLayout
+                android:id="@+id/edit_img"
+                android:layout_width="@dimen/sp_30"
+                android:layout_height="@dimen/sp_30"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/ellipse_edit"
+                android:backgroundTint="@color/white">
+
+                <ImageView
+                    android:layout_width="@dimen/sp_16"
+                    android:layout_height="@dimen/sp_16"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_edit"
+                    android:tint="@color/darkturquoise" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/u_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/u_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/caroline_case"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/u_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/u_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/caroline"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16" />
+
+        <LinearLayout
+            android:id="@+id/ll_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/u_nickname"
+            android:layout_marginTop="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="@dimen/sp_180"
+                android:layout_height="@dimen/sp_40"
+                android:background="@drawable/icon_bg"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/edit_personal_profile"
+                android:textColor="@color/darkturquoise" />
+
+            <LinearLayout
+                android:id="@+id/ll_business_product"
+                android:layout_width="@dimen/sp_40"
+                android:layout_height="@dimen/sp_40"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:background="@drawable/icon_bg"
+                android:backgroundTint="@color/white"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/sp_24"
+                    android:layout_height="@dimen/sp_24"
+                    android:src="@drawable/ic_business_acimg" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_edit"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ic_fb"
+                android:layout_width="@dimen/sp_35"
+                android:layout_height="@dimen/sp_35"
+                android:src="@drawable/ic_fb_icon" />
+
+            <ImageView
+                android:id="@+id/ic_insta"
+                android:layout_width="@dimen/sp_35"
+                android:layout_height="@dimen/sp_35"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:src="@drawable/ic_insta_icon" />
+
+            <ImageView
+                android:id="@+id/ic_twitter"
+                android:layout_width="@dimen/sp_35"
+                android:layout_height="@dimen/sp_35"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:src="@drawable/ic_twitter_icon" />
+
+            <ImageView
+                android:id="@+id/ic_linkdin"
+                android:layout_width="@dimen/sp_35"
+                android:layout_height="@dimen/sp_35"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:src="@drawable/ic_linkedin_icon" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/rectangle_8"
+            app:tabIndicatorHeight="@dimen/sp_0"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabSelectedTextColor="@color/darkturquoise"
+            app:tabTextColor="@color/grey">
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tabLayout"
+            android:background="@color/bg_grey_color" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view" />
+    </RelativeLayout>
+
+</RelativeLayout>

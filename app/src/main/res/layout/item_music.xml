@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#2D2E30"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingTop="18dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="18dp">
+
+    <TextView
+        android:id="@+id/tv_music_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="135dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_singer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"
+        android:textColor="#99FFFFFF"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_playing"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/music_drawable"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_music_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#66FFFFFF"
+        android:textSize="15sp" />
+
+</LinearLayout>

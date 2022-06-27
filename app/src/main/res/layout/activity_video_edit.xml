@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.VideoEditActivity">
+
+    <TextureView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_5">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="@dimen/sp_40"
+            android:layout_height="@dimen/sp_40"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/sp_5"
+            android:padding="@dimen/sp_12"
+            android:src="@drawable/ic_close" />
+
+
+        <ImageView
+            android:id="@+id/crop_btn"
+            android:layout_width="@dimen/sp_40"
+            android:layout_height="@dimen/sp_40"
+            android:layout_marginLeft="@dimen/sp_5"
+            android:layout_toLeftOf="@+id/back_iv"
+            android:padding="@dimen/margin_8"
+            android:src="@drawable/ic_cam_crop_rotate" />
+
+
+        <ImageView
+            android:id="@+id/stickers_btn"
+            android:layout_width="@dimen/sp_40"
+            android:layout_height="@dimen/sp_40"
+            android:layout_marginLeft="@dimen/sp_5"
+            android:layout_toLeftOf="@+id/crop_btn"
+            android:padding="@dimen/margin_8"
+            android:src="@drawable/ic_cam_sticker" />
+
+
+        <ImageView
+            android:id="@+id/add_text_btn"
+            android:layout_width="@dimen/sp_40"
+            android:layout_height="@dimen/sp_40"
+            android:layout_marginLeft="@dimen/sp_5"
+            android:layout_toLeftOf="@+id/paint_btn"
+            android:padding="@dimen/sp_5"
+            android:src="@drawable/ic_aa" />
+
+        <ImageView
+            android:id="@+id/paint_btn"
+            android:layout_width="@dimen/sp_40"
+            android:layout_height="@dimen/sp_40"
+            android:layout_marginLeft="@dimen/sp_5"
+            android:layout_toLeftOf="@id/stickers_btn"
+            android:padding="@dimen/margin_8"
+            android:src="@drawable/ic_cam_draw"
+            android:visibility="gone" />
+
+        <com.example.friendfield.view.VerticalSlideColorPicker
+            android:id="@+id/color_picker_view"
+            android:layout_width="@dimen/sp_10"
+            android:layout_height="@dimen/sp_180"
+            android:layout_below="@+id/paint_btn"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_25"
+            android:visibility="invisible"
+            app:defaultColor="@color/checkbox_color" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_type_msg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sp_70"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rl_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/sp_40"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_toLeftOf="@+id/btn_send"
+            android:background="@drawable/edt_rectangle_btn"
+            android:elevation="@dimen/sp_10">
+
+            <ImageView
+                android:id="@+id/ic_emoji"
+                android:layout_width="@dimen/sp_20"
+                android:layout_height="@dimen/sp_20"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:src="@drawable/ic_emoji" />
+
+
+            <EditText
+                android:id="@+id/txt_chating"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/image"
+                android:layout_toRightOf="@+id/ic_emoji"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/typing_here"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_5"
+                android:textSize="@dimen/text_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_send"
+            android:layout_width="@dimen/sp_40"
+            android:layout_height="@dimen/sp_40"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_20"
+            android:background="@drawable/cricle_send_btn">
+
+            <ImageView
+                android:layout_width="@dimen/sp_20"
+                android:layout_height="@dimen/sp_20"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_send_vector" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
